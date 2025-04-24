@@ -1,1 +1,5 @@
+<<<<<<< .merge_file_FaqOUB
 hotfix 해주세요
+=======
+hotfix 완료하였습니다.
+>>>>>>> .merge_file_dMla20
