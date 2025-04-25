@@ -21,7 +21,6 @@ namespace day5_1
             //String helloMsg2 = "Ipsum lorem";
             String helloMsg3 = "안녕하세요 aranghong입니다.";
 
-
             textBox_print.Text = helloMsg;
             MessageBox.Show(helloMsg3);
         }
