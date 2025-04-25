@@ -21,7 +21,7 @@ namespace day5_1
 
             textBox_print.Text = helloMsg;
 
-            textBox_print.Text = "안녕하세요\r\n반갑습니다";
+            MessageBox.Show(helloMsg);
         }
     }
 }
