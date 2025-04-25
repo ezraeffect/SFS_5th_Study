@@ -17,11 +17,11 @@ namespace day5_1
             InitializeComponent();
 
             //MessageBox.Show("Hello, World!");
-            String helloMsg = "안녕하세요. 반갑습니다";
+            String helloMsg = "안녕하세요. test branch에서 수정했습니다.";
+            String helloMsg2 = "Ipsum lorem";
 
             textBox_print.Text = helloMsg;
-
-            MessageBox.Show(helloMsg);
+            MessageBox.Show(helloMsg2);
         }
     }
 }
