@@ -17,6 +17,9 @@ namespace day5_1
             InitializeComponent();
 
             //MessageBox.Show("Hello, World!");
+            String helloMsg = "안녕하세요. 반갑습니다";
+
+            textBox_print.Text = helloMsg;
 
             textBox_print.Text = "안녕하세요\r\n반갑습니다";
         }
