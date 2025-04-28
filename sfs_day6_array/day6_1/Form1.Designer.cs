@@ -34,6 +34,7 @@
             // 
             // textBox_print
             // 
+            this.textBox_print.Font = new System.Drawing.Font("굴림", 15F);
             this.textBox_print.Location = new System.Drawing.Point(17, 42);
             this.textBox_print.Multiline = true;
             this.textBox_print.Name = "textBox_print";
