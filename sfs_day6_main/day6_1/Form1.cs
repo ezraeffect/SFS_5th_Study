@@ -27,7 +27,7 @@ namespace day6_1
             // Q2. 문자열 + 숫자
             string q2str = "15";
             textBox_print.Text += $"{q2str}에 10을 더하면 {int.Parse(q2str) + 10} 입니다.\r\n";
-
+                    
             // Q3. 종합 문제
             string goodsName = "노트북";
             int goodsPrice = 1200000;
