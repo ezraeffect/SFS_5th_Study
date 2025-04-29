@@ -16,19 +16,34 @@ namespace day7_1
         {
             InitializeComponent();
 
-            int a = 8;
-            int b = 3;
-            int[] result = new int[2];
-            result = DivNumber(a, b);
+            bool isFront = true;
+            bool result = CoinFlipping(isFront);
 
-            textBox_print.Text = "몫 : " + result[0].ToString() + " / 나머지 : " + result[1].ToString();
+            if (result == true)
+            {
+                textBox_print.Text = ("승리");
+            }
+            else if (result == false)
+            {
+                textBox_print.Text = ("패배");
+            }
+
         }
 
-        int[] DivNumber(int a, int b){
-            int[] result = new int[2];
-            result[0] = a / b;
-            result[1] = a % b;
-            return result;
+        bool CoinFlipping(bool i)
+        {
+            Random rand = new Random(); // Random 클래스 선언
+
+            bool isOdd = rand.Next(0, 11) % 2 == 1 ? true : false; // 홀수일 경우 true, 짝수일 경우 false
+
+            if (i && isOdd)
+            {
+                return true;
+            }
+            else
+            {   
+                return false;
+            }
         }
 
     }
