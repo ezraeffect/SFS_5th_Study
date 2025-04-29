@@ -36,7 +36,7 @@ namespace day7_1
 
             bool isOdd = rand.Next(0, 11) % 2 == 1 ? true : false; // 홀수일 경우 true, 짝수일 경우 false
 
-            if (i && isOdd)
+            if (i == isOdd)
             {
                 return true;
             }
