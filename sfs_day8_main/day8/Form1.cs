@@ -13,6 +13,18 @@ namespace day8
 {
     public partial class Form1 : Form
     {
+        enum Week
+        {
+            Sunday,
+            Monday,
+            Tuseday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday,
+            NotDay
+
+        }
         public Form1()
         {
             InitializeComponent();
@@ -20,44 +32,51 @@ namespace day8
 
         private void button_input_Click(object sender, EventArgs e)
         {
-            bool isCoinFront;
-            bool result;
 
-            if (textBox_input.Text == "true" || textBox_input.Text == "false") // textBox_input에 입력된 문자열이 있다면 우선적으로 처리
-            {
-                isCoinFront = bool.Parse(textBox_input.Text);
-                result = CoinFlipping(isCoinFront);
-                textBox_result.Text = $"textBox로 입력하신 값은 {isCoinFront.ToString()} 입니다.\r\n동전 던지기 결과...\r\n";
-                textBox_result.Text += result ? "승리" : "패배";
-            }
-            else if (radioButtonFront.Checked || radioButtonBack.Checked) // textBox_input에 값을 입력하지 않아도 라디오 버튼의 상태에 따라 true 또는 false 값이 입력되도록 처리
-            {
-                isCoinFront = radioButtonFront.Checked || !radioButtonBack.Checked;
-                result = CoinFlipping(isCoinFront);
-                textBox_result.Text = $"radioButton으로 입력하신 값은 {isCoinFront.ToString()} 입니다.\r\n동전 던지기 결과...\r\n";
-                textBox_result.Text += result ? "승리" : "패배";
-            }
-            else // 사용자가 true 또는 false 이외의 값을 입력했다면 적당한 에러 메시지를 textBox_result에 출력
-            {
-                textBox_result.Text = "올바르지 않은 입력 값 입니다.";
-            }
-        }
+            // 1. 사용자는 요일을 입력할 수 있음
+            // 2. 사용자가 요일 이외의 문자열을 입력하면 오류를 출력
+            // 3. 각 요일별로 재미난 메시지를 화면에 출력
 
-        bool CoinFlipping(bool i)
-        {
-            Random rand = new Random(); // Random 클래스 선언
+            int day;
 
-            bool coin = rand.Next() % 2 == 1; // 홀수일 경우 true, 짝수일 경우 false
+            if (textBox_input.Text == "일요일" || radioButton1.Checked) day = (int)Week.Sunday;
+            else if (textBox_input.Text == "월요일" || radioButton2.Checked) day = (int)Week.Monday;
+            else if (textBox_input.Text == "화요일" || radioButton3.Checked) day = (int)Week.Tuseday;
+            else if (textBox_input.Text == "수요일" || radioButton4.Checked) day = (int)Week.Wednesday;
+            else if (textBox_input.Text == "목요일" || radioButton5.Checked) day = (int)Week.Thursday;
+            else if (textBox_input.Text == "금요일" || radioButton6.Checked) day = (int)Week.Friday;
+            else if (textBox_input.Text == "토요일" || radioButton7.Checked) day = (int)Week.Saturday;
+            else day = (int)Week.NotDay;
 
-            // 예측과 결과가 동일할 경우에만 true 반환
-            if (i == coin)
-            {
-                return true;
+            switch(day){
+                case (int)Week.Sunday:
+                    textBox_result.Text = "일요일 : 시간은 흐르는데 월요일이 점점 다가옴.";
+                    return;
+                case (int)Week.Monday:
+                    textBox_result.Text = "월요일 : 살아있음에 감사하려다 출근으로 화남.";
+                    return;
+                case (int)Week.Tuseday:
+                    textBox_result.Text = "화요일 : 아직도 화요일이라는 사실에 멘탈 붕괴.";
+                    return;
+                case (int)Week.Wednesday:
+                    textBox_result.Text = "수요일 : 주말이 보일 듯 말 듯한 신기루.";
+                    return;
+                case (int)Week.Thursday:
+                    textBox_result.Text = "목요일 : 일한 만큼 주말이 안 옴.";
+                    return;
+                case (int)Week.Friday:
+                    textBox_result.Text = "금요일 : 퇴근이 곧 해방, 몸은 회사에 마음은 집에.";
+                    return;
+                case (int)Week.Saturday:
+                    textBox_result.Text = "일요일 : 시간은 흐르는데 월요일이 점점 다가옴.";
+                    return;
+                case (int)Week.NotDay:
+                    textBox_result.Text = "잘못된 값을 입력하셨습니다.";
+                    return;
+
+
             }
-            else
-            {
-                return false;
-            }
+
         }
     }
 }
