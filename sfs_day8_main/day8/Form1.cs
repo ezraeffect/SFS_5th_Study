@@ -32,7 +32,7 @@ namespace day8
 
         private void button_input_Click(object sender, EventArgs e)
         {
-            string message = textBox_result.Text.Trim();
+            string message = textBox_input.Text.Trim();
 
             Week day = GetDayFromInput(message);
 
