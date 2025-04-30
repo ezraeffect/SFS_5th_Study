@@ -11,20 +11,20 @@ using System.Windows.Forms;
 
 namespace day8
 {
+    enum Week
+    {
+        Sunday,
+        Monday,
+        Tuesday,    // 오타 수정: Tuseday → Tuesday
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        NotDay
+    }
+
     public partial class Form1 : Form
     {
-        enum Week
-        {
-            Sunday,
-            Monday,
-            Tuseday,
-            Wednesday,
-            Thursday,
-            Friday,
-            Saturday,
-            NotDay
-
-        }
         public Form1()
         {
             InitializeComponent();
@@ -32,51 +32,61 @@ namespace day8
 
         private void button_input_Click(object sender, EventArgs e)
         {
+            string message = textBox_result.Text.Trim();
 
-            // 1. 사용자는 요일을 입력할 수 있음
-            // 2. 사용자가 요일 이외의 문자열을 입력하면 오류를 출력
-            // 3. 각 요일별로 재미난 메시지를 화면에 출력
+            Week day = GetDayFromInput(message);
 
-            int day;
-
-            if (textBox_input.Text == "일요일" || radioButton1.Checked) day = (int)Week.Sunday;
-            else if (textBox_input.Text == "월요일" || radioButton2.Checked) day = (int)Week.Monday;
-            else if (textBox_input.Text == "화요일" || radioButton3.Checked) day = (int)Week.Tuseday;
-            else if (textBox_input.Text == "수요일" || radioButton4.Checked) day = (int)Week.Wednesday;
-            else if (textBox_input.Text == "목요일" || radioButton5.Checked) day = (int)Week.Thursday;
-            else if (textBox_input.Text == "금요일" || radioButton6.Checked) day = (int)Week.Friday;
-            else if (textBox_input.Text == "토요일" || radioButton7.Checked) day = (int)Week.Saturday;
-            else day = (int)Week.NotDay;
-
-            switch(day){
-                case (int)Week.Sunday:
+            switch (day)
+            {
+                case Week.Sunday:
                     textBox_result.Text = "일요일 : 시간은 흐르는데 월요일이 점점 다가옴.";
-                    return;
-                case (int)Week.Monday:
+                    break;
+                case Week.Monday:
                     textBox_result.Text = "월요일 : 살아있음에 감사하려다 출근으로 화남.";
-                    return;
-                case (int)Week.Tuseday:
+                    break;
+                case Week.Tuesday:
                     textBox_result.Text = "화요일 : 아직도 화요일이라는 사실에 멘탈 붕괴.";
-                    return;
-                case (int)Week.Wednesday:
+                    break;
+                case Week.Wednesday:
                     textBox_result.Text = "수요일 : 주말이 보일 듯 말 듯한 신기루.";
-                    return;
-                case (int)Week.Thursday:
+                    break;
+                case Week.Thursday:
                     textBox_result.Text = "목요일 : 일한 만큼 주말이 안 옴.";
-                    return;
-                case (int)Week.Friday:
+                    break;
+                case Week.Friday:
                     textBox_result.Text = "금요일 : 퇴근이 곧 해방, 몸은 회사에 마음은 집에.";
-                    return;
-                case (int)Week.Saturday:
-                    textBox_result.Text = "일요일 : 시간은 흐르는데 월요일이 점점 다가옴.";
-                    return;
-                case (int)Week.NotDay:
+                    break;
+                case Week.Saturday:
+                    textBox_result.Text = "토요일 : 일찍 일어나면 손해보는 느낌.";
+                    break;
+                default:
                     textBox_result.Text = "잘못된 값을 입력하셨습니다.";
-                    return;
-
-
+                    break;
             }
+        }
 
+        private Week GetDayFromInput(string input)
+        {
+            switch (input)
+            {
+                case "일요일":
+                    return Week.Sunday;
+                case "월요일":
+                    return Week.Monday;
+                case "화요일":
+                    return Week.Tuesday;
+                case "수요일":
+                    return Week.Wednesday;
+                case "목요일":
+                    return Week.Thursday;
+                case "금요일":
+                    return Week.Friday;
+                case "토요일":
+                    return Week.Saturday;
+                default:
+                    return Week.NotDay;
+            }
         }
     }
+
 }
