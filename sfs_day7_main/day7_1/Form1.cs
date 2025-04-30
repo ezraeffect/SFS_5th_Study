@@ -19,14 +19,16 @@ namespace day7_1
             bool isFront = true;
             bool result = CoinFlipping(isFront);
 
-            if (result == true)
+            /*if (result == true)
             {
                 textBox_print.Text = ("승리");
             }
             else if (result == false)
             {
                 textBox_print.Text = ("패배");
-            }
+            }*/
+
+            textBox_print.Text = result ? "승리" : "패배";
 
         }
 
@@ -34,9 +36,11 @@ namespace day7_1
         {
             Random rand = new Random(); // Random 클래스 선언
 
-            bool isOdd = rand.Next(0, 11) % 2 == 1 ? true : false; // 홀수일 경우 true, 짝수일 경우 false
+            bool coin = rand.Next() % 2 == 1; // 홀수일 경우 true, 짝수일 경우 false
 
-            if (i == isOdd)
+            // 예측과 결과가 동일할 경우에만 true 반환
+            if (i == coin)
+            //if ((coin == true && i == true) || (coin == false && i == false))
             {
                 return true;
             }
