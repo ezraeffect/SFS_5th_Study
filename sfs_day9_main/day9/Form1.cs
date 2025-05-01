@@ -16,12 +16,12 @@ namespace day9
         public Form1()
         {
             InitializeComponent();
-            for(int i = 2; i <= 9; i++)
+
+            for(int i = 0; i <= 5; i++)
             {
-                for (int j = 1; j <= 9; j++)
-                {
-                    Console.WriteLine($"{i} x {j} = {i * j}");
-                }
+                for (int j = 0; j < 5 - i; j++) Console.Write(" ");
+                for (int j = 0; j < i - 1; j++) Console.Write("*");
+                Console.WriteLine("\r\n");
             }
         }
     }
