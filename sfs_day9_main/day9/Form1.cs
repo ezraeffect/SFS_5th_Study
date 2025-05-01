@@ -15,6 +15,11 @@ namespace day9
         public Form1()
         {
             InitializeComponent();
+
+            int result = 0;
+            for(int i = 1; i <= 20; i++)if (i % 2 == 0) result += i;
+            Console.WriteLine($"1부터 20까지 수 중 짝수의 합은 {result}입니다.");
+            
         }
     }
 }
