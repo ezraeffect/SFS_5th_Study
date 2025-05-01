@@ -47,7 +47,7 @@ namespace day9
                     studentArray[i, 0] = studentName;
 
                     //textBox_result.AppendText($"{studentArray[i, 1]}\r\n");
-                    textBox_result.AppendText($"{NotifyScore(studentArray[i,0], int.Parse(studentArray[i,1]))}\r\n");
+                    textBox_result.AppendText($"{NotifyScore(studentArray[i,0], studentArray[i,1])}\r\n");
 
                 }
             }
@@ -55,10 +55,9 @@ namespace day9
             {
                 textBox_result.AppendText("입력 형식이 잘못되었습니다.\r\n");
             }
-            
         }
 
-        private string NotifyScore(string name, int score)
+        private string NotifyScore(string name, string score)
         {
             // 4. 모든 학생에 대해 “학생1의 점수: 42점” 과 같은 형태로 결과를 표시
             // 이름과 성적을 입력하면 위와 같은 문자열을 만들어주는 함수를 작성하여 사용
