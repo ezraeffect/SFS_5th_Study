@@ -17,8 +17,17 @@ namespace day9
             InitializeComponent();
 
             int result = 0;
-            for(int i = 1; i <= 20; i++)if (i % 2 == 0) result += i;
-            Console.WriteLine($"1부터 20까지 수 중 짝수의 합은 {result}입니다.");
+            int count = 0;
+            for(int i = 1; i <= 100; i++)
+            {
+                if(i % 3 == 0 && !(i % 5 == 0))
+                {
+                    Console.WriteLine(i);
+                    count++;
+                    result += i;
+                }
+            }
+            Console.WriteLine($"갯수 : {count}, 총합 : {result}");
             
         }
     }
