@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace day9
 {
@@ -15,20 +16,13 @@ namespace day9
         public Form1()
         {
             InitializeComponent();
-
-            int result = 0;
-            int count = 0;
-            for(int i = 1; i <= 100; i++)
+            for(int i = 2; i <= 9; i++)
             {
-                if(i % 3 == 0 && i % 5 != 0)
+                for (int j = 1; j <= 9; j++)
                 {
-                    Console.WriteLine(i);
-                    count++;
-                    result += i;
+                    Console.WriteLine($"{i} x {j} = {i * j}");
                 }
             }
-            Console.WriteLine($"갯수 : {count}, 총합 : {result}");
-            
         }
     }
 }
