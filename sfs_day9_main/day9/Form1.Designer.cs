@@ -28,13 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.textBox_input = new System.Windows.Forms.TextBox();
+            this.textBox_result = new System.Windows.Forms.TextBox();
+            this.button_input = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // textBox_input
+            // 
+            this.textBox_input.Location = new System.Drawing.Point(12, 12);
+            this.textBox_input.Name = "textBox_input";
+            this.textBox_input.Size = new System.Drawing.Size(695, 21);
+            this.textBox_input.TabIndex = 0;
+            // 
+            // textBox_result
+            // 
+            this.textBox_result.Location = new System.Drawing.Point(12, 39);
+            this.textBox_result.Multiline = true;
+            this.textBox_result.Name = "textBox_result";
+            this.textBox_result.Size = new System.Drawing.Size(776, 399);
+            this.textBox_result.TabIndex = 1;
+            // 
+            // button_input
+            // 
+            this.button_input.Location = new System.Drawing.Point(713, 10);
+            this.button_input.Name = "button_input";
+            this.button_input.Size = new System.Drawing.Size(75, 23);
+            this.button_input.TabIndex = 2;
+            this.button_input.Text = "입력";
+            this.button_input.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_input);
+            this.Controls.Add(this.textBox_result);
+            this.Controls.Add(this.textBox_input);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBox_input;
+        private System.Windows.Forms.TextBox textBox_result;
+        private System.Windows.Forms.Button button_input;
     }
 }
 
