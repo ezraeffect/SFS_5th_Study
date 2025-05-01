@@ -40,7 +40,7 @@ namespace day9
                 for (int i = 0; studentNumber > i; i++)
                 {
                     // 2. 입력된 학생 수 만큼 0~100점 사이의 랜덤한 점수를 생성하고 각 학생 에게 점수를 할당
-                    int rndScore = rnd.Next(0, 100);
+                    int rndScore = rnd.Next(0, 101);
                     studentArray[i,1] = rndScore.ToString();
                     // 3. 학생의 이름은 “학생1”, “학생2”, ... 와 같이 숫자만 붙여서 표기
                     studentName = $"학생{i+1}";
