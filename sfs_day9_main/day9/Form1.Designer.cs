@@ -56,6 +56,7 @@
             this.button_input.TabIndex = 2;
             this.button_input.Text = "입력";
             this.button_input.UseVisualStyleBackColor = true;
+            this.button_input.Click += new System.EventHandler(this.button_input_Click);
             // 
             // Form1
             // 
