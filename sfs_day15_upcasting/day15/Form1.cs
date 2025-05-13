@@ -72,7 +72,6 @@ namespace day15
             weapon4.Name = "기본활";
             weapon4.Attack();
             Console.WriteLine($"활 공격 데미지 : {((Gun)weapon4).Fire(1)}");
-
         }
     }
 }
