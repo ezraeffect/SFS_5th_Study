@@ -11,6 +11,8 @@ namespace day15
     // 다형성을 가능하게 하기 위해
     // 유연한 구조 -> 유지보수를 용이하게 하기 위해
     // 메서드만 정의 (기능은 없음)
+
+    // 인터페이스는 클래스가 상속받는 것이 아니라, 구현하는 것이기 때문에 처음부터 해당 메서드를 직접 정의하는 것.
     public interface IReadable
     {
         void Read();
@@ -25,6 +27,8 @@ namespace day15
     {
         void Print();
     }
+
+    // 인터페이스 다중 상속
 
     public class Document : IReadable, IWriteable, IPrintable
     {
