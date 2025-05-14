@@ -34,9 +34,9 @@ namespace day16
             try
             {
                 // 2.다음 조건을 검사하여, 해당하지 않을 경우 직접 예외 발생시키기
-                if (nickname.Length == 0) throw new Exception("닉네임을 입력해주세요"); // 닉네임이 비어 있음, Excption, "닉네임을 입력해주세요"
+                if (string.IsNullOrWhiteSpace(nickname)) throw new Exception("닉네임을 입력해주세요"); // 닉네임이 비어 있음, Excption, "닉네임을 입력해주세요"
                 else if (nickname.Length < 2) throw new Exception("닉네임은 2글자 이상이여야 합니다"); // 닉네임 길이가 2자 미만, Execption, "닉네임은 2글자 이상이여야 합니다"
-                else if (nickname.Contains("admin")) throw new Exception("닉네임에 'admin'은 포함할 수 없습니다"); // 닉네임에 admin 포함, Exception, "닉네임에 'admin'은 포함할 수 없습니다"
+                else if (nickname.ToLower().Contains("admin")) throw new Exception("닉네임에 'admin'은 포함할 수 없습니다"); // 닉네임에 admin 포함, Exception, "닉네임에 'admin'은 포함할 수 없습니다"
                 else Console.WriteLine($"{nickname}으로 닉네임 등록 완료!"); // 3.조건에 해당하지 않으면 "닉네임 등록 완료!"를 출력
             }
             catch (Exception ex)
