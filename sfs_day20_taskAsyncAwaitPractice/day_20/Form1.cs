@@ -34,6 +34,15 @@ namespace day_20
                     using (StreamReader sr = new StreamReader(path))
                     {
                         return await sr.ReadToEndAsync();
+
+                        /*
+                         * Await
+                         * - 비동기 작업이 끝날때 까지 비동기 Task를 기다리는 것.
+                         * - 결과값이 있는 경우 (Task<T>) 결과값 T를 꺼내서 사용
+                         * - 결과값이 없는 경우 (Task)    끝날 때까지 기다림
+                         * 
+                         * string을 Return하여도 Task<string>으로 자동 변환되어 반환됨.
+                         */
                     }
                 }
                 catch (Exception e)
@@ -61,7 +70,6 @@ namespace day_20
         private async void button_Start_Click(object sender, EventArgs e)
         {
             string filePath = textBox_filePath.Text;
-
             string fileText = await ReadFileAsync(filePath);
 
             textBox_Result.AppendText(fileText);
