@@ -23,7 +23,7 @@ namespace day_20
             InitializeComponent();
         }
 
-        private async Task ReadFileAsync(string path)
+        private async Task<string> ReadFileAsync(string path)
         {
             if (!string.IsNullOrWhiteSpace(path) || File.Exists(path))
             {
@@ -33,19 +33,18 @@ namespace day_20
                     // The using statement also closes the StreamReader.
                     using (StreamReader sr = new StreamReader(path))
                     {
-                        textBox_Result.AppendText(await sr.ReadToEndAsync());
+                        return await sr.ReadToEndAsync();
                     }
                 }
                 catch (Exception e)
                 {
                     // Let the user know what went wrong.
-                    textBox_Result.AppendText("\r\nThe file could not be read:");
-                    textBox_Result.AppendText(e.Message);
+                    return e.Message;
                 }
             }
             else
             {
-                textBox_Result.AppendText("파일 경로가 잘못되었습니다");
+                return "파일 경로가 잘못되었습니다";
             }
         }
 
@@ -63,7 +62,9 @@ namespace day_20
         {
             string filePath = textBox_filePath.Text;
 
-            await ReadFileAsync(filePath);
+            string fileText = await ReadFileAsync(filePath);
+
+            textBox_Result.AppendText(fileText);
 
             textBox_Result.AppendText("\r\n읽기 완료");
         }
