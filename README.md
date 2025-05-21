@@ -59,6 +59,28 @@
 ### Day 16
 - 예외 처리: try-catch, throw
 
+## Day 17
+- Collections
+- Generic Collections
+
+## Day 18
+- 델리게이트 (Delegate)
+
+## Day 19
+- 멀티스레드
+- BackgroundWorker
+- Thread
+- Event
+
+## Day 20
+- Task
+- Await
+- Async
+
+## Day 21
+- WPF 기초
+- WPF Xaml
+
 ---
 
 ## 📁 구성 방식
